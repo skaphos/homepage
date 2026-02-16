@@ -2,6 +2,7 @@
   {{ $page := . }}
   <article class="hero">
     {{ with $page.Params.statusClass }}<span class="badge {{ . }}">{{ $page.Params.status }}</span>{{ end }}
+    {{ with $page.Params.avatar }}<img class="profile-avatar" src="{{ . | relURL }}" alt="{{ $page.Title }} avatar">{{ end }}
     <h1>{{ $page.Title }}</h1>
     {{ with $page.Params.tagline }}<p class="meta">{{ . }}</p>{{ end }}
     {{ with $page.Params.role }}<p class="meta">{{ . }}</p>{{ end }}

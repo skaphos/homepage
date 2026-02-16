@@ -2,6 +2,7 @@
 title: "Shawn Stratton"
 role: "Co-founder, Project Maintainer"
 summary: "Co-founder focused on practical Kubernetes operations, platform architecture, and operator workflow design."
+avatar: "images/team/shawn-stratton-avatar.png"
 github: "https://github.com/mfacenet"
 linkedin: "https://www.linkedin.com/in/sstratton"
 ---
