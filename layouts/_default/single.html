@@ -1,8 +1,20 @@
 {{ define "main" }}
-  <article class="card">
-    <h1>{{ .Title }}</h1>
-    {{ with .Params.tagline }}<p class="muted">{{ . }}</p>{{ end }}
-    {{ with .Params.role }}<p class="muted">{{ . }}</p>{{ end }}
-    {{ .Content }}
+  {{ $page := . }}
+  <article class="hero">
+    {{ with $page.Params.statusClass }}<span class="badge {{ . }}">{{ $page.Params.status }}</span>{{ end }}
+    <h1>{{ $page.Title }}</h1>
+    {{ with $page.Params.tagline }}<p class="meta">{{ . }}</p>{{ end }}
+    {{ with $page.Params.role }}<p class="meta">{{ . }}</p>{{ end }}
+
+    {{ if or $page.Params.repo $page.Params.module $page.Params.github $page.Params.linkedin }}
+      <ul class="meta-list">
+        {{ with $page.Params.repo }}<li><strong>Repository:</strong> <a href="{{ . }}">{{ . }}</a></li>{{ end }}
+        {{ with $page.Params.module }}<li><strong>Go module:</strong> <code>{{ . }}</code></li>{{ end }}
+        {{ with $page.Params.github }}<li><strong>GitHub:</strong> <a href="{{ . }}">{{ . }}</a></li>{{ end }}
+        {{ with $page.Params.linkedin }}<li><strong>LinkedIn:</strong> <a href="{{ . }}">{{ . }}</a></li>{{ end }}
+      </ul>
+    {{ end }}
+
+    <div class="prose">{{ $page.Content }}</div>
   </article>
 {{ end }}

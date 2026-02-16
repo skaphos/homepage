@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'Skaphos'
 disableKinds = ['taxonomy', 'term', 'RSS']
 
+[params]
+  tagline = 'Navigate your infrastructure.'
+  summary = 'Operational control tooling for Kubernetes platform teams.'
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

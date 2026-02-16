@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <link rel="icon" type="image/svg+xml" href="{{ "images/skaphos-favicon-fullcolor.svg" | relURL }}">
   <style>
     :root {
-      --bg: #f7f8fa;
-      --panel: #ffffff;
-      --text: #111827;
-      --muted: #4b5563;
-      --border: #d1d5db;
-      --accent: #0f766e;
+      --color-bg: #F7FAFC;
+      --color-surface: #FFFFFF;
+      --color-text: #0B1F33;
+      --color-text-muted: #4A5D70;
+      --color-primary: #0E6BA8;
+      --color-primary-strong: #055A8C;
+      --color-accent: #2A9D8F;
+      --color-border: #D7E1EA;
+      --color-success: #2E7D32;
+      --color-warning: #C27A00;
     }
 
     * {
@@ -20,92 +25,219 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: radial-gradient(circle at 0% -10%, #dceefa 0%, var(--color-bg) 40%),
+                  radial-gradient(circle at 100% 0%, #e4f7f2 0%, transparent 45%),
+                  var(--color-bg);
+    }
+
+    h1, h2, h3 {
+      font-family: "Space Grotesk", "Avenir Next", sans-serif;
+      line-height: 1.2;
+      margin-top: 0;
+      color: var(--color-text);
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--color-primary-strong);
     }
 
     .container {
-      width: min(100%, 960px);
+      width: min(1040px, 100% - 2rem);
       margin: 0 auto;
-      padding: 1.5rem;
     }
 
     header {
-      border-bottom: 1px solid var(--border);
-      background: var(--panel);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: inherit;
-      font-weight: 700;
-    }
-
-    .brand img {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
+      border-bottom: 1px solid var(--color-border);
+      background: color-mix(in srgb, var(--color-surface) 90%, transparent);
+      backdrop-filter: blur(4px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      padding: 0.9rem 0;
     }
 
-    nav ul {
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: inherit;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .brand img {
+      width: 99px;
+      height: 99px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
       margin: 0;
       padding: 0;
-      list-style: none;
-      display: flex;
-      gap: 1rem;
     }
 
-    nav a {
-      color: var(--text);
-      text-decoration: none;
+    .nav-links a {
+      display: inline-block;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      font-weight: 600;
     }
 
-    nav a:hover {
-      color: var(--accent);
+    .nav-links a:hover {
+      background: #e9f2f8;
     }
 
     main {
-      padding-block: 2rem;
+      padding: 2.2rem 0 2.8rem;
+      animation: fade-in 0.35s ease-out;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 14px;
+      padding: clamp(1.2rem, 2.5vw, 2rem);
+      margin-bottom: 1.6rem;
+      box-shadow: 0 8px 20px rgb(11 31 51 / 0.05);
+    }
+
+    .tagline {
+      display: inline-flex;
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .section {
+      margin-top: 1.6rem;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.9rem;
     }
 
     .card-grid {
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
     .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
       padding: 1rem;
+      height: 100%;
     }
 
-    .card h3 {
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .meta {
+      color: var(--color-text-muted);
+      margin-top: 0.3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      margin-bottom: 0.65rem;
+    }
+
+    .badge.status-released {
+      background: #edf7ee;
+      border-color: #cae9cf;
+      color: var(--color-success);
+    }
+
+    .badge.status-planned {
+      background: #fff7e8;
+      border-color: #f1ddb1;
+      color: var(--color-warning);
+    }
+
+    .prose {
+      color: var(--color-text);
+    }
+
+    .prose p,
+    .prose ul,
+    .prose ol {
       margin-top: 0;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.85rem;
     }
 
-    .muted {
-      color: var(--muted);
+    .prose ul {
+      padding-left: 1.1rem;
+    }
+
+    .meta-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta-list li {
+      margin-bottom: 0.35rem;
+      color: var(--color-text-muted);
     }
 
     footer {
-      border-top: 1px solid var(--border);
-      background: var(--panel);
+      border-top: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text-muted);
+      padding: 1rem 0 1.3rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        width: 100%;
+      }
+
+      .nav-links a {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   </style>
 </head>
@@ -117,7 +249,8 @@
           <img src="{{ "images/skaphos.jpg" | relURL }}" alt="Skaphos logo">
           <span>{{ .Site.Title }}</span>
         </a>
-        <ul>
+        <ul class="nav-links">
+          <li><a href="{{ "about/" | relURL }}">About</a></li>
           <li><a href="{{ "tools/" | relURL }}">Tools</a></li>
           <li><a href="{{ "team/" | relURL }}">Team</a></li>
         </ul>
@@ -125,13 +258,15 @@
     </div>
   </header>
 
-  <main class="container">
-    {{ block "main" . }}{{ end }}
+  <main>
+    <div class="container">
+      {{ block "main" . }}{{ end }}
+    </div>
   </main>
 
   <footer>
-    <div class="container muted">
-      <p>Open source projects by the Skaphos group.</p>
+    <div class="container">
+      <p>{{ .Site.Title }} builds operational control tooling for Kubernetes platform teams.</p>
     </div>
   </footer>
 </body>

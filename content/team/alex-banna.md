@@ -1,12 +1,13 @@
 ---
 title: "Alex Banna"
-role: "Member, Project Maintainer"
+role: "Co-founder, Project Maintainer"
+summary: "Co-founder driving project direction, technical collaboration, and iterative refinement across Skaphos tools."
 ---
 
-Alex Banna is a member of the Skaphos group and helps drive and refine open source projects.
+Alex Banna is a Skaphos co-founder who helps drive and refine open source projects with a practical operator-first mindset.
 
 Primary focus areas:
 
-- Product direction and refinement
-- Technical collaboration
-- Open source support
+- Project direction and ongoing refinement.
+- Technical collaboration across Skaphos tools.
+- Operational feedback loops for product quality.

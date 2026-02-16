@@ -1,17 +1,21 @@
 {{ define "main" }}
-  <section>
+  <section class="hero">
     <h1>{{ .Title }}</h1>
-    {{ .Content }}
+    <div class="prose">{{ .Content }}</div>
   </section>
 
-  <section class="card-grid">
-    {{ range .Pages.ByTitle }}
-      <article class="card">
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        {{ with .Params.role }}<p class="muted">{{ . }}</p>{{ end }}
-        {{ with .Params.tagline }}<p class="muted">{{ . }}</p>{{ end }}
-        <p>{{ .Summary }}</p>
-      </article>
-    {{ end }}
+  <section class="section">
+    <div class="card-grid">
+      {{ range .Pages.ByTitle }}
+        {{ $page := . }}
+        <article class="card">
+          {{ with $page.Params.statusClass }}<span class="badge {{ . }}">{{ $page.Params.status }}</span>{{ end }}
+          <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+          {{ with $page.Params.role }}<p class="meta">{{ . }}</p>{{ end }}
+          {{ with $page.Params.tagline }}<p class="meta">{{ . }}</p>{{ end }}
+          <div class="prose">{{ $page.Summary }}</div>
+        </article>
+      {{ end }}
+    </div>
   </section>
 {{ end }}

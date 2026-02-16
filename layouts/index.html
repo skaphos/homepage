@@ -1,28 +1,40 @@
 {{ define "main" }}
-  <section>
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
+  <section class="hero">
+    <span class="tagline">{{ .Site.Params.tagline }}</span>
+    <h1>{{ .Site.Title }}</h1>
+    <p class="meta">{{ .Site.Params.summary }}</p>
+    <div class="prose">{{ .Content }}</div>
   </section>
 
-  <section>
-    <h2>Featured Tool</h2>
-    {{ with site.GetPage "/tools/repokeeper" }}
-      <article class="card">
-        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <p class="muted">{{ .Params.tagline }}</p>
-        <p>{{ .Summary }}</p>
-      </article>
-    {{ end }}
+  <section class="section">
+    <div class="section-head">
+      <h2>Tool Portfolio</h2>
+      <a href="{{ "tools/" | relURL }}">View all tools</a>
+    </div>
+    <div class="card-grid">
+      {{ range (site.GetPage "/tools").Pages.ByTitle }}
+        {{ $tool := . }}
+        <article class="card">
+          {{ with $tool.Params.statusClass }}<span class="badge {{ . }}">{{ $tool.Params.status }}</span>{{ end }}
+          <h3><a href="{{ $tool.RelPermalink }}">{{ $tool.Title }}</a></h3>
+          {{ with $tool.Params.tagline }}<p class="meta">{{ . }}</p>{{ end }}
+          <div class="prose">{{ $tool.Summary }}</div>
+        </article>
+      {{ end }}
+    </div>
   </section>
 
-  <section>
-    <h2>Team</h2>
+  <section class="section">
+    <div class="section-head">
+      <h2>Founding Team</h2>
+      <a href="{{ "team/" | relURL }}">Meet the team</a>
+    </div>
     <div class="card-grid">
       {{ range (site.GetPage "/team").Pages.ByTitle }}
         <article class="card">
           <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <p class="muted">{{ .Params.role }}</p>
-          <p>{{ .Summary }}</p>
+          {{ with .Params.role }}<p class="meta">{{ . }}</p>{{ end }}
+          <div class="prose">{{ .Summary }}</div>
         </article>
       {{ end }}
     </div>
