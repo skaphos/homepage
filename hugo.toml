@@ -1,0 +1,9 @@
+baseURL = 'https://skaphos.io/'
+languageCode = 'en-us'
+title = 'Skaphos'
+disableKinds = ['taxonomy', 'term', 'RSS']
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <section>
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </section>
+
+  <section>
+    <h2>Featured Tool</h2>
+    {{ with site.GetPage "/tools/repokeeper" }}
+      <article class="card">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="muted">{{ .Params.tagline }}</p>
+        <p>{{ .Summary }}</p>
+      </article>
+    {{ end }}
+  </section>
+
+  <section>
+    <h2>Team</h2>
+    <div class="card-grid">
+      {{ range (site.GetPage "/team").Pages.ByTitle }}
+        <article class="card">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="muted">{{ .Params.role }}</p>
+          <p>{{ .Summary }}</p>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

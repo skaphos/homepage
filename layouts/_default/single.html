@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <article class="card">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.tagline }}<p class="muted">{{ . }}</p>{{ end }}
+    {{ with .Params.role }}<p class="muted">{{ . }}</p>{{ end }}
+    {{ .Content }}
+  </article>
+{{ end }}
