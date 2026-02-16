@@ -1,12 +1,12 @@
 ---
 title: "Shawn Stratton"
-role: "Founder, Maintainer"
+role: "Member, Project Maintainer"
 ---
 
-Shawn Stratton is a core maintainer of the Skaphos open source projects.
+Shawn Stratton is a member of the Skaphos group and helps drive and refine open source projects.
 
 Primary focus areas:
 
 - Project architecture
+- Project direction and refinement
 - Tooling and automation
-- Developer experience and operations
