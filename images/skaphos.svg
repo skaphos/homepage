@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512"
+     viewBox="-128 -128 256 256"
+     xmlns="http://www.w3.org/2000/svg"
+     version="1.1">
+  <title>Skaphos Flat Logo</title>
+  <!-- White background (optional) -->
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  
+  <!-- Helm (circle + 7 spokes) -->
+  <g fill="#326CE5" stroke="#326CE5" stroke-width="10">
+    <!-- Central circle -->
+    <circle cx="0" cy="0" r="60" fill="#326CE5" stroke="none"/>
+    <!-- 7 spokes (lines rotated around center) -->
+    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(0)"/>
+    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(51.428571)"/>
+    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(102.857142)"/>
+    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(154.285713)"/>
+    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(205.714284)"/>
+    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(257.142855)"/>
+    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(308.571426)"/>
+  </g>
+  
+  <!-- Boat shape in front -->
+  <path fill="#326CE5" stroke="none"
+        d="M -75 35
+           C -55 20 -25 20 0 20
+           C 25 20 55 20 75 35
+           C 65 45 0 60 -65 45
+           Z"/>
+</svg>
