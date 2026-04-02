@@ -1,11 +1,19 @@
 apiVersion: repokeeper/v1
 kind: RepoMetadata
 repo_id: github.com/skaphos/homepage
-name: Homepage
+name: Skaphos Homepage
 labels:
     kind: website
     org: skaphos
     role: public-site
 paths:
+    authoritative:
+        - content/
+        - layouts/
+        - static/
+        - hugo.toml
     low_value:
         - .github/
+related_repos:
+    - repo_id: github.com/skaphos/skaphos-resources
+      relationship: references
