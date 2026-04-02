@@ -1,0 +1,11 @@
+apiVersion: repokeeper/v1
+kind: RepoMetadata
+repo_id: github.com/skaphos/homepage
+name: Homepage
+labels:
+    kind: website
+    org: skaphos
+    role: public-site
+paths:
+    low_value:
+        - .github/
