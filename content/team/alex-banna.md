@@ -1,5 +1,6 @@
 ---
 title: "Alex Banna"
+weight: 20
 role: "Founding member"
 summary: "Founding member profile is pending review."
 ---

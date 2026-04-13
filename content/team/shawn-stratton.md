@@ -1,5 +1,6 @@
 ---
 title: "Shawn Stratton"
+weight: 10
 role: "Co-founder"
 summary: "Platform architect focused on practical Kubernetes operations and tools that reduce day-to-day platform friction."
 avatar: "images/team/shawn-stratton-avatar.png"

@@ -34,30 +34,40 @@
     {{ $toolsPage := site.GetPage "/tools" }}
     {{ $platformTools := where $toolsPage.Pages "Params.portfolio" "Skaphos Platform" }}
     {{ $adjacentTools := where $toolsPage.Pages "Params.portfolio" "Adjacent Tools" }}
-    <div class="card-grid">
-      <article class="card">
+
+    <section class="section">
+      <div class="section-head">
         <h3>Skaphos Platform</h3>
-        <p class="meta">Core Kubernetes platform systems for deterministic fleet operations.</p>
-        <div class="prose">
-          <ul>
-            {{ range $platformTools.ByWeight }}
-              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-            {{ end }}
-          </ul>
-        </div>
-      </article>
-      <article class="card">
+      </div>
+      <div class="card-grid">
+        {{ range $platformTools.ByWeight }}
+          {{ $tool := . }}
+          <article class="card">
+            {{ with $tool.Params.statusClass }}<span class="badge {{ . }}">{{ $tool.Params.status }}</span>{{ end }}
+            <h3><a href="{{ $tool.RelPermalink }}">{{ $tool.Title }}</a></h3>
+            {{ with $tool.Params.tagline }}<p class="meta">{{ . }}</p>{{ end }}
+            <div class="prose">{{ $tool.Summary }}</div>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
         <h3>Adjacent Tools</h3>
-        <p class="meta">Focused utilities that complement the platform without requiring the full stack.</p>
-        <div class="prose">
-          <ul>
-            {{ range $adjacentTools.ByWeight }}
-              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-            {{ end }}
-          </ul>
-        </div>
-      </article>
-    </div>
+      </div>
+      <div class="card-grid">
+        {{ range $adjacentTools.ByWeight }}
+          {{ $tool := . }}
+          <article class="card">
+            {{ with $tool.Params.statusClass }}<span class="badge {{ . }}">{{ $tool.Params.status }}</span>{{ end }}
+            <h3><a href="{{ $tool.RelPermalink }}">{{ $tool.Title }}</a></h3>
+            {{ with $tool.Params.tagline }}<p class="meta">{{ . }}</p>{{ end }}
+            <div class="prose">{{ $tool.Summary }}</div>
+          </article>
+        {{ end }}
+      </div>
+    </section>
   </section>
 
   <section class="section">
@@ -66,7 +76,7 @@
       <a href="{{ "team/" | relURL }}">Meet the team</a>
     </div>
     <div class="card-grid">
-      {{ range (site.GetPage "/team").Pages.ByTitle }}
+      {{ range (site.GetPage "/team").Pages.ByWeight }}
         <article class="card">
           <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
           {{ with .Params.role }}<p class="meta">{{ . }}</p>{{ end }}
