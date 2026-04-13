@@ -6,7 +6,7 @@
 
   <section class="section">
     <div class="card-grid">
-      {{ range .Pages.ByTitle }}
+      {{ range .Pages.ByWeight }}
         {{ $page := . }}
         <article class="card">
           {{ with $page.Params.statusClass }}<span class="badge {{ . }}">{{ $page.Params.status }}</span>{{ end }}

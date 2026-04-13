@@ -1,5 +1,6 @@
 ---
 title: "Repokeeper"
+weight: 10
 tagline: "Repository collections as explicit operational state"
 status: "Implemented and released"
 statusClass: "status-released"
@@ -10,7 +11,7 @@ module: "github.com/skaphos/repokeeper"
 
 Repokeeper manages collections of Git repositories across machines and directory layouts.
 
-It provides structured repository inventory, health reporting, and safe synchronization as a unit.
+It provides structured repository inventory, health reporting, and safe synchronization as a unit. Repokeeper does not replace Git; it adds explicit structure around repository collections so they can be managed as operational state.
 
 ## Core responsibilities
 

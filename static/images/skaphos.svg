@@ -1,31 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="512" height="512"
-     viewBox="-128 -128 256 256"
-     xmlns="http://www.w3.org/2000/svg"
-     version="1.1">
-  <title>Skaphos Flat Logo</title>
-  <!-- White background (optional) -->
-  <rect width="100%" height="100%" fill="#FFFFFF"/>
-  
-  <!-- Helm (circle + 7 spokes) -->
-  <g fill="#326CE5" stroke="#326CE5" stroke-width="10">
-    <!-- Central circle -->
-    <circle cx="0" cy="0" r="60" fill="#326CE5" stroke="none"/>
-    <!-- 7 spokes (lines rotated around center) -->
-    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(0)"/>
-    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(51.428571)"/>
-    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(102.857142)"/>
-    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(154.285713)"/>
-    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(205.714284)"/>
-    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(257.142855)"/>
-    <line x1="0" y1="0" x2="0" y2="-60" transform="rotate(308.571426)"/>
-  </g>
-  
-  <!-- Boat shape in front -->
-  <path fill="#326CE5" stroke="none"
-        d="M -75 35
-           C -55 20 -25 20 0 20
-           C 25 20 55 20 75 35
-           C 65 45 0 60 -65 45
-           Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+<g id="helm">
+<circle cx="512.0" cy="368.64" r="225.28" stroke="#FFFFFF" stroke-width="28" />
+<circle cx="512.0" cy="368.64" r="153.6" stroke="#FFFFFF" stroke-width="9" opacity="0.55" />
+<line x1="512.00" y1="344.64" x2="512.00" y2="165.76" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" />
+<line x1="528.97" y1="351.67" x2="655.46" y2="225.18" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" />
+<line x1="536.00" y1="368.64" x2="714.88" y2="368.64" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" />
+<line x1="528.97" y1="385.61" x2="655.46" y2="512.10" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" />
+<line x1="512.00" y1="392.64" x2="512.00" y2="571.52" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" />
+<line x1="495.03" y1="385.61" x2="368.54" y2="512.10" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" />
+<line x1="488.00" y1="368.64" x2="309.12" y2="368.64" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" />
+<line x1="495.03" y1="351.67" x2="368.54" y2="225.18" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" />
+<circle cx="512.0" cy="368.64" r="24" fill="#FFFFFF" />
+</g>
+<g id="ship">
+<path d="M 286.72 532.48 Q 512.0 492.48 737.28 532.48 L 696.3199999999999 717.28 Q 512.0 757.28 327.68 717.28 Z" fill="#1E5AA8" stroke="#FFFFFF" stroke-width="22" stroke-linejoin="round" />
+<path d="M 286.72 532.48 Q 512.0 492.48 737.28 532.48 L 696.3199999999999 717.28 Q 512.0 757.28 327.68 717.28 Z" fill="none" stroke="#FFFFFF" stroke-width="11" opacity="0.35" />
+<path d="M 512.0 532.48 L 696.3199999999999 717.28 Q 512.0 757.28 512.0 532.48 Z" fill="#0F3E7A" opacity="0.7"/>
+<path d="M 512.0 527.48 L 512.0 715.28" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" opacity="0.75" />
+<path d="M 304.72 550.48 Q 512.0 522.48 719.28 550.48" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" opacity="0.55" />
+</g>
+<g id="waves">
+<path d="M 307.2 755.28 C 409.6 745.28 614.4 765.28 716.8 755.28" stroke="#2A78D4" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.63"/>
+<path d="M 307.2 775.28 C 409.6 761.28 614.4 789.28 716.8 775.28" stroke="#2A78D4" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.52"/>
+<path d="M 307.2 795.28 C 409.6 786.28 614.4 804.28 716.8 795.28" stroke="#2A78D4" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.42"/>
+</g>
 </svg>

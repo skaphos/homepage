@@ -78,12 +78,12 @@
       gap: 0.75rem;
       color: inherit;
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
 
     .brand img {
-      width: 99px;
-      height: 99px;
+      width: 144px;
+      height: auto;
       object-fit: contain;
     }
 
@@ -195,6 +195,18 @@
       color: var(--color-warning);
     }
 
+    .badge.status-active {
+      background: #e8f3fb;
+      border-color: #bfd7ea;
+      color: var(--color-primary-strong);
+    }
+
+    .badge.status-proposed {
+      background: #f2f5f8;
+      border-color: #d7e1ea;
+      color: var(--color-text-muted);
+    }
+
     .prose {
       color: var(--color-text);
     }
@@ -257,8 +269,7 @@
     <div class="container">
       <nav>
         <a class="brand" href="{{ "/" | relURL }}">
-          <img src="{{ "images/skaphos.jpg" | relURL }}" alt="Skaphos logo">
-          <span>{{ .Site.Title }}</span>
+          <img src="{{ "images/skaphos-logo-fullcolor.svg" | relURL }}" alt="Skaphos logo">
         </a>
         <ul class="nav-links">
           <li><a href="{{ "about/" | relURL }}">About</a></li>

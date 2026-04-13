@@ -8,11 +8,31 @@
 
   <section class="section">
     <div class="section-head">
+      <h2>Built for Deliberate Operations</h2>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <h3>Explicit State</h3>
+        <p class="meta">Operational state should be inspectable and reviewable.</p>
+      </article>
+      <article class="card">
+        <h3>Deterministic Systems</h3>
+        <p class="meta">Behavior should be predictable, reconstructible, and safe to reason about.</p>
+      </article>
+      <article class="card">
+        <h3>Kubernetes Native</h3>
+        <p class="meta">Tools should work with Kubernetes primitives, not obscure them.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
       <h2>Tool Portfolio</h2>
       <a href="{{ "tools/" | relURL }}">View all tools</a>
     </div>
     <div class="card-grid">
-      {{ range (site.GetPage "/tools").Pages.ByTitle }}
+      {{ range (site.GetPage "/tools").Pages.ByWeight }}
         {{ $tool := . }}
         <article class="card">
           {{ with $tool.Params.statusClass }}<span class="badge {{ . }}">{{ $tool.Params.status }}</span>{{ end }}
