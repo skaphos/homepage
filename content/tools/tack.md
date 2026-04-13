@@ -1,6 +1,7 @@
 ---
 title: "Tack"
 weight: 50
+portfolio: "Skaphos Platform"
 tagline: "Declarative progressive traffic shifting"
 status: "Proposed"
 statusClass: "status-proposed"

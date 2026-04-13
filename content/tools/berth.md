@@ -1,6 +1,7 @@
 ---
 title: "Berth"
 weight: 20
+portfolio: "Skaphos Platform"
 tagline: "Distributed lease coordination for multi-cluster Kubernetes workloads"
 status: "Released"
 statusClass: "status-released"

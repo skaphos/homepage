@@ -1,6 +1,7 @@
 ---
 title: "Anchor"
 weight: 40
+portfolio: "Skaphos Platform"
 tagline: "Admission-time enforcement for immutable artifact references"
 status: "Proposed"
 statusClass: "status-proposed"

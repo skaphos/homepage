@@ -1,6 +1,7 @@
 ---
 title: "Meridian"
 weight: 30
+portfolio: "Skaphos Platform"
 tagline: "Deterministic fleet lifecycle control for Kubernetes"
 status: "In design"
 statusClass: "status-active"

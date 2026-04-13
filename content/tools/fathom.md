@@ -1,6 +1,7 @@
 ---
 title: "Fathom"
 weight: 25
+portfolio: "Skaphos Platform"
 tagline: "Platform integrity validation for Kubernetes"
 status: "Planned and under development"
 statusClass: "status-planned"

@@ -1,6 +1,7 @@
 ---
 title: "Repokeeper"
 weight: 10
+portfolio: "Adjacent Tools"
 tagline: "Repository collections as explicit operational state"
 status: "Implemented and released"
 statusClass: "status-released"

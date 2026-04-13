@@ -78,12 +78,12 @@
       gap: 0.75rem;
       color: inherit;
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
 
     .brand img {
-      width: 144px;
-      height: auto;
+      width: 99px;
+      height: 99px;
       object-fit: contain;
     }
 
@@ -269,7 +269,8 @@
     <div class="container">
       <nav>
         <a class="brand" href="{{ "/" | relURL }}">
-          <img src="{{ "images/skaphos-logo-fullcolor.svg" | relURL }}" alt="Skaphos logo">
+          <img src="{{ "images/skaphos.jpg" | relURL }}" alt="Skaphos logo">
+          <span>{{ .Site.Title }}</span>
         </a>
         <ul class="nav-links">
           <li><a href="{{ "about/" | relURL }}">About</a></li>

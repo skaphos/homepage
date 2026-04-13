@@ -1,14 +1,15 @@
 ---
 title: "Belay"
 weight: 80
+portfolio: "Skaphos Platform"
 tagline: "Clean sidecar shutdown for CronJobs with injected proxies"
-status: "Proposed"
-statusClass: "status-proposed"
+status: "Active development"
+statusClass: "status-active"
 summary: "Belay keeps mesh-injected CronJob pods from hanging by ensuring injected proxy sidecars terminate when the primary container exits."
 module: "github.com/skaphos/belay"
 ---
 
-Belay ensures that Kubernetes CronJob pods containing injected service mesh proxy sidecars terminate cleanly when the primary container exits.
+Belay is under active development to ensure Kubernetes CronJob pods containing injected service mesh proxy sidecars terminate cleanly when the primary container exits.
 
 It operates as a mutating admission webhook that injects a lightweight watcher sidecar when mesh injection is detected, avoiding stuck Jobs and disrupted schedules.
 

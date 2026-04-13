@@ -15,4 +15,4 @@ We build focused, Kubernetes-native tools for platform teams that need deliberat
 
 ## Where it is going
 
-Skaphos starts with concrete operational tools and evolves toward a cohesive operational system driven by real platform needs. Current public work includes Repokeeper for repository-state management and Fathom for platform integrity validation.
+Skaphos starts with concrete operational tools and evolves toward a cohesive operational system driven by real platform needs. The work is organized into two portfolios: Skaphos Platform for the core Kubernetes platform systems, and Adjacent Tools for complementary utilities such as Repokeeper and Wake.

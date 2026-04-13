@@ -1,6 +1,7 @@
 ---
 title: "Skaphos CLI"
 weight: 60
+portfolio: "Skaphos Platform"
 tagline: "Unified command surface for Skaphos platform tooling"
 status: "Proposed"
 statusClass: "status-proposed"
