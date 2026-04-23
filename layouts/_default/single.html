@@ -1,11 +1,15 @@
 {{ define "main" }}
   {{ $page := . }}
   <article class="hero">
-    {{ with $page.Params.statusClass }}<span class="badge {{ . }}">{{ $page.Params.status }}</span>{{ end }}
+    <div class="eyebrow">
+      <span class="eyebrow-dot" aria-hidden="true"></span>
+      {{ $page.Section | default "Skaphos" | humanize }}
+    </div>
     {{ with $page.Params.avatar }}<img class="profile-avatar" src="{{ . | relURL }}" alt="{{ $page.Title }} avatar">{{ end }}
     <h1>{{ $page.Title }}</h1>
     {{ with $page.Params.tagline }}<p class="meta">{{ . }}</p>{{ end }}
     {{ with $page.Params.role }}<p class="meta">{{ . }}</p>{{ end }}
+    {{ with $page.Params.statusClass }}<p><span class="badge {{ . }}">{{ $page.Params.status }}</span></p>{{ end }}
 
     {{ if or $page.Params.repo $page.Params.module $page.Params.github $page.Params.linkedin }}
       <ul class="meta-list">

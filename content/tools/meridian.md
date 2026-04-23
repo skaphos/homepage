@@ -3,7 +3,7 @@ title: "Meridian"
 weight: 30
 portfolio: "Skaphos Platform"
 tagline: "Deterministic fleet lifecycle control for Kubernetes"
-status: "In design"
+status: "Active"
 statusClass: "status-active"
 summary: "Meridian is a Kubernetes-native fleet lifecycle controller for provisioning, identity management, upgrades, and decommissioning."
 repo: "https://github.com/skaphos/meridian"

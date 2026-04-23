@@ -3,7 +3,7 @@ title: "Repokeeper"
 weight: 10
 portfolio: "Adjacent Tools"
 tagline: "Repository collections as explicit operational state"
-status: "Implemented and released"
+status: "Released"
 statusClass: "status-released"
 summary: "Repokeeper manages and safely synchronizes repository collections as explicit operational state."
 repo: "https://github.com/skaphos/repokeeper"

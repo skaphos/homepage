@@ -1,86 +1,163 @@
 {{ define "main" }}
-  <section class="hero">
-    <span class="tagline">{{ .Site.Params.tagline }}</span>
-    <h1>{{ .Site.Title }}</h1>
-    <p class="meta">{{ .Site.Params.summary }}</p>
-    <div class="prose">{{ .Content }}</div>
-  </section>
+  {{ $toolsPage := site.GetPage "/tools" }}
+  {{ $platformTools := where $toolsPage.Pages "Params.portfolio" "Skaphos Platform" }}
+  {{ $adjacentTools := where $toolsPage.Pages "Params.portfolio" "Adjacent Tools" }}
 
-  <section class="section">
-    <div class="section-head">
-      <h2>Built for Deliberate Operations</h2>
-    </div>
-    <div class="card-grid">
-      <article class="card">
-        <h3>Explicit State</h3>
-        <p class="meta">Operational state should be inspectable and reviewable.</p>
-      </article>
-      <article class="card">
-        <h3>Deterministic Systems</h3>
-        <p class="meta">Behavior should be predictable, reconstructible, and safe to reason about.</p>
-      </article>
-      <article class="card">
-        <h3>Kubernetes Native</h3>
-        <p class="meta">Tools should work with Kubernetes primitives, not obscure them.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-head">
-      <h2>Tool Portfolios</h2>
-      <a href="{{ "tools/" | relURL }}">View all tools</a>
-    </div>
-    {{ $toolsPage := site.GetPage "/tools" }}
-    {{ $platformTools := where $toolsPage.Pages "Params.portfolio" "Skaphos Platform" }}
-    {{ $adjacentTools := where $toolsPage.Pages "Params.portfolio" "Adjacent Tools" }}
-
-    <section class="section">
-      <div class="section-head">
-        <h3>Skaphos Platform</h3>
+  <section class="hero hero-landing">
+    <div class="hero-copy">
+      <div class="eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Operational control for Kubernetes
       </div>
-      <div class="card-grid">
-        {{ range $platformTools.ByWeight }}
-          {{ $tool := . }}
-          <article class="card">
-            {{ with $tool.Params.statusClass }}<span class="badge {{ . }}">{{ $tool.Params.status }}</span>{{ end }}
-            <h3><a href="{{ $tool.RelPermalink }}">{{ $tool.Title }}</a></h3>
-            {{ with $tool.Params.tagline }}<p class="meta">{{ . }}</p>{{ end }}
-            <div class="prose">{{ $tool.Summary }}</div>
-          </article>
+      <h1>{{ replace .Site.Params.tagline "infrastructure" "<em>infrastructure</em>" | safeHTML }}</h1>
+      <p class="lede">{{ .Site.Params.summary }}</p>
+      <div class="hero-ctas">
+        <a class="btn btn-k8s" href="{{ "tools/" | relURL }}">
+          Explore the tools
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero-side" aria-label="Portfolio at a glance">
+      <div class="hs-label">Portfolio</div>
+      <ul>
+        {{ range first 2 $platformTools.ByWeight }}
+          <li>
+            <span class="hs-dot {{ .Params.statusClass }}" aria-hidden="true"></span>
+            <span class="hs-name">{{ .Title }}</span>
+            <span class="hs-status">{{ .Params.status }}</span>
+          </li>
         {{ end }}
-      </div>
-    </section>
+        {{ range first 1 $adjacentTools.ByWeight }}
+          <li>
+            <span class="hs-dot hs-dot-sibling" aria-hidden="true"></span>
+            <span class="hs-name">{{ .Title }}</span>
+            <span class="hs-status">Sibling</span>
+          </li>
+        {{ end }}
+      </ul>
+    </aside>
+  </section>
 
-    <section class="section">
-      <div class="section-head">
-        <h3>Adjacent Tools</h3>
-      </div>
-      <div class="card-grid">
+  <section class="principles-strip" id="principles" aria-label="Operating principles">
+    <ul class="principles">
+      <li>
+        <span class="p-num mono">01</span>
+        <div class="p-text">
+          <strong class="p-title">Explicit state</strong>
+          <span class="p-sub">over implicit behavior</span>
+        </div>
+      </li>
+      <li>
+        <span class="p-num mono">02</span>
+        <div class="p-text">
+          <strong class="p-title">Deterministic</strong>
+          <span class="p-sub">reconstructible systems</span>
+        </div>
+      </li>
+      <li>
+        <span class="p-num mono">03</span>
+        <div class="p-text">
+          <strong class="p-title">Composable</strong>
+          <span class="p-sub">focused responsibilities</span>
+        </div>
+      </li>
+      <li>
+        <span class="p-num mono">04</span>
+        <div class="p-text">
+          <strong class="p-title">K8s-native</strong>
+          <span class="p-sub">GitOps-compatible</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="suite">
+    <div class="section-head">
+      <h2><span class="section-idx mono">01</span> The Skaphos suite</h2>
+      <a class="hd-link" href="{{ "tools/" | relURL }}">All tools →</a>
+    </div>
+
+    <div class="suite-grid">
+      {{ range $platformTools.ByWeight }}
+        {{ $tool := . }}
+        <article class="card card-tool">
+          {{ with $tool.Params.statusClass }}<span class="badge {{ . }}">{{ $tool.Params.status }}</span>{{ end }}
+          <h3><a href="{{ $tool.RelPermalink }}">{{ $tool.Title }}</a></h3>
+          {{ with $tool.Params.tagline }}<p class="tagline-line">{{ . }}</p>{{ end }}
+          {{ with $tool.Params.highlights }}
+            <ul class="bullets">
+              {{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}
+            </ul>
+          {{ else }}
+            <div class="prose">{{ $tool.Summary }}</div>
+          {{ end }}
+          <p class="module-line">
+            {{ with $tool.Params.module }}<span>{{ . }}</span>{{ end }}
+            <a class="tool-link" href="{{ $tool.RelPermalink }}">Details →</a>
+          </p>
+        </article>
+      {{ end }}
+    </div>
+
+    {{ if $adjacentTools }}
+      <div class="sibling-row">
+        <div class="sibling-head">
+          <h3>Sibling project{{ if gt (len $adjacentTools) 1 }}s{{ end }}</h3>
+          <span class="desc">Built by the team · not part of the suite</span>
+        </div>
         {{ range $adjacentTools.ByWeight }}
           {{ $tool := . }}
-          <article class="card">
-            {{ with $tool.Params.statusClass }}<span class="badge {{ . }}">{{ $tool.Params.status }}</span>{{ end }}
-            <h3><a href="{{ $tool.RelPermalink }}">{{ $tool.Title }}</a></h3>
-            {{ with $tool.Params.tagline }}<p class="meta">{{ . }}</p>{{ end }}
-            <div class="prose">{{ $tool.Summary }}</div>
+          <article class="card card-sibling">
+            <div>
+              {{ with $tool.Params.statusClass }}<span class="badge {{ . }}">{{ $tool.Params.status }}</span>{{ end }}
+              <h3><a href="{{ $tool.RelPermalink }}">{{ $tool.Title }}</a></h3>
+              {{ with $tool.Params.tagline }}<p class="tagline-line">{{ . }}</p>{{ end }}
+              <p class="summary">{{ $tool.Summary }}</p>
+              <p class="module-line">
+                {{ with $tool.Params.module }}<span>{{ . }}</span>{{ end }}
+                <a class="tool-link" href="{{ $tool.RelPermalink }}">Details →</a>
+              </p>
+            </div>
+            {{ with $tool.Params.commands }}
+              <ul class="cmds" aria-label="Core commands">
+                {{ range . }}<li><span class="tok">$</span> {{ . }}</li>{{ end }}
+              </ul>
+            {{ end }}
           </article>
         {{ end }}
       </div>
-    </section>
+    {{ end }}
   </section>
 
-  <section class="section">
+  <section class="section" id="team">
     <div class="section-head">
-      <h2>Founding Team</h2>
-      <a href="{{ "team/" | relURL }}">Meet the team</a>
+      <h2><span class="section-idx mono">02</span> Founding team</h2>
+      <a class="hd-link" href="{{ "team/" | relURL }}">Meet the team →</a>
     </div>
-    <div class="card-grid">
+    <div class="team-grid">
       {{ range (site.GetPage "/team").Pages.ByWeight }}
-        <article class="card">
-          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          {{ with .Params.role }}<p class="meta">{{ . }}</p>{{ end }}
-          <div class="prose">{{ .Summary }}</div>
+        <article class="card team-card">
+          {{ if .Params.avatar }}
+            <img class="avatar" src="{{ .Params.avatar | relURL }}" alt="{{ .Title }} avatar">
+          {{ else }}
+            <div class="avatar avatar-initials" aria-hidden="true">
+              {{- $parts := split .Title " " -}}
+              {{- range $i, $p := $parts -}}{{- if lt $i 2 -}}{{- substr $p 0 1 -}}{{- end -}}{{- end -}}
+            </div>
+          {{ end }}
+          <div>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ with .Params.role }}<p class="role">{{ . }}</p>{{ end }}
+            <p class="summary">{{ .Summary }}</p>
+            {{ if or .Params.github .Params.linkedin }}
+              <div class="links">
+                {{ with .Params.github }}<a href="{{ . }}">GitHub →</a>{{ end }}
+                {{ with .Params.linkedin }}<a href="{{ . }}">LinkedIn →</a>{{ end }}
+              </div>
+            {{ end }}
+          </div>
         </article>
       {{ end }}
     </div>

@@ -3,7 +3,7 @@ title: "Fathom"
 weight: 25
 portfolio: "Skaphos Platform"
 tagline: "Platform integrity validation for Kubernetes"
-status: "Planned and under development"
+status: "Planned"
 statusClass: "status-planned"
 summary: "Fathom validates Kubernetes cluster integrity against explicit platform health requirements."
 repo: "https://github.com/skaphos/fathom"
