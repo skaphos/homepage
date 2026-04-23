@@ -3,7 +3,7 @@ title: "Wake"
 weight: 70
 portfolio: "Adjacent Tools"
 tagline: "Evidence-backed repository forensics and ownership analysis"
-status: "Active development"
+status: "Active"
 statusClass: "status-active"
 summary: "Wake analyzes Git history and repository evidence to produce inspectable conclusions about ownership, evolution, and contributor behavior."
 repo: "https://github.com/skaphos/wake"

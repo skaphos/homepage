@@ -1,0 +1,21 @@
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="{{ "/" | relURL }}">
+        <img src="{{ "images/skaphos.jpg" | relURL }}" alt="Skaphos logo">
+        <span>{{ .Site.Title }}</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="{{ "about/" | relURL }}">About</a></li>
+        <li><a href="{{ "tools/" | relURL }}">Tools</a></li>
+        <li><a href="{{ "team/" | relURL }}">Team</a></li>
+      </ul>
+      <div class="nav-meta">
+        <span class="nav-repo">github.com/skaphos</span>
+        <a class="btn-star" href="https://github.com/skaphos" aria-label="Star Skaphos on GitHub">
+          <span class="star" aria-hidden="true">★</span> star
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
