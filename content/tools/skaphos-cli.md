@@ -5,7 +5,7 @@ portfolio: "Skaphos Platform"
 tagline: "Unified command surface for Skaphos platform tooling"
 status: "Proposed"
 statusClass: "status-proposed"
-summary: "Skaphos CLI is a thin dispatcher that presents Meridian, Fathom, Tack, and Anchor through one consistent interface."
+summary: "Skaphos CLI is a thin dispatcher that presents Skaphos platform tools through one consistent interface."
 module: "github.com/skaphos/skaphos-cli"
 ---
 
@@ -15,7 +15,7 @@ It is intentionally thin: each standalone tool remains the authoritative impleme
 
 ## Intended scope
 
-- Unified dispatch for Meridian, Fathom, Tack, and Anchor.
+- Unified dispatch for Meridian, Fathom, Keleustes, and other Skaphos platform tools.
 - Config-driven plugin registration.
 - Tool discovery, verification, and version reporting.
 - Consistent operational entry point without centralizing tool logic.

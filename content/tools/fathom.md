@@ -3,8 +3,8 @@ title: "Fathom"
 weight: 25
 portfolio: "Skaphos Platform"
 tagline: "Platform integrity validation for Kubernetes"
-status: "Planned"
-statusClass: "status-planned"
+status: "Released"
+statusClass: "status-released"
 summary: "Fathom validates Kubernetes cluster integrity against explicit platform health requirements."
 repo: "https://github.com/skaphos/fathom"
 module: "github.com/skaphos/fathom"
@@ -13,6 +13,8 @@ module: "github.com/skaphos/fathom"
 Fathom validates Kubernetes cluster integrity against defined platform health requirements.
 
 It is focused on structural platform soundness rather than metric-based monitoring and can be deployed to a Kubernetes cluster as a standalone system.
+
+Fathom has an initial release and remains under active development.
 
 ## Conceptual components
 
