@@ -2,24 +2,22 @@
 title: "About"
 ---
 
-Skaphos exists to reduce operational ambiguity for platform teams running Kubernetes at scale.
+Skaphos is an open suite of platform-control tools for teams that operate Kubernetes-based systems across many applications, clusters, regions, environments, and failure domains.
 
-Our mission is to help platform engineers operate Kubernetes with clarity, control, and predictability. We start with practical operational tools and evolve toward a cohesive system over time.
+We are not building a Kubernetes dashboard, a CI system, a hosted PaaS, or a wrapper around primitives the ecosystem already provides. We are building the control-plane layer between raw infrastructure and human process — the layer that makes platform state explicit, delivery explainable, topology inspectable, policy enforceable, and recovery deterministic.
 
-Skaphos is designed for teams that operate real infrastructure and need systems that are inspectable, deterministic, and grounded in declared state. Its tools are intentionally composable: each solves a focused operational problem and can be used independently or together.
+The long form of why is in the [manifesto]({{< relref "manifesto" >}}).
 
-## Operating model
+## Who it is for
 
-- Built for platform engineers, infrastructure engineers, and Kubernetes operators.
-- Kubernetes-native by design and compatible with GitOps workflows.
-- Focused on explicit state, determinism, and operational clarity.
-- Structured as focused tools with standalone operational value.
+Platform engineers, infrastructure engineers, and Kubernetes operators running real production environments. Skaphos assumes Kubernetes fundamentals and works directly with Kubernetes primitives and APIs rather than abstracting them away.
 
-## What Skaphos is not
+## How to adopt it
+
+Skaphos tools are adoptable in layers. Start at visibility — inventory, topology discovery, drift, ownership — without any control-plane mutation. Add standardization when repository and environment structure needs to converge. Take on control — promotion, policy gates, Git mutation, audit — only when trust is earned.
+
+## What it is not
 
 - Not a platform-as-a-service abstraction.
 - Not a proprietary orchestration layer that replaces Kubernetes.
-
-## Audience
-
-Skaphos is built for platform engineers, infrastructure engineers, and Kubernetes operators working in real production environments.
+- Not a per-application pricing trap dressed up as a control plane.

@@ -7,13 +7,17 @@
     <div class="hero-copy">
       <div class="eyebrow">
         <span class="eyebrow-dot" aria-hidden="true"></span>
-        Operational control for Kubernetes
+        Platform engineering as control-plane engineering
       </div>
       <h1>{{ replace .Site.Params.tagline "infrastructure" "<em>infrastructure</em>" | safeHTML }}</h1>
       <p class="lede">{{ .Site.Params.summary }}</p>
       <div class="hero-ctas">
         <a class="btn btn-k8s" href="{{ "tools/" | relURL }}">
           Explore the tools
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn-ghost" href="{{ "manifesto/" | relURL }}">
+          Read the manifesto
           <span class="arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -45,29 +49,29 @@
       <li>
         <span class="p-num mono">01</span>
         <div class="p-text">
-          <strong class="p-title">Explicit state</strong>
-          <span class="p-sub">over implicit behavior</span>
+          <strong class="p-title">Git is the boundary</strong>
+          <span class="p-sub">durable desired state</span>
         </div>
       </li>
       <li>
         <span class="p-num mono">02</span>
         <div class="p-text">
-          <strong class="p-title">Deterministic</strong>
-          <span class="p-sub">reconstructible systems</span>
+          <strong class="p-title">Topology is delivery</strong>
+          <span class="p-sub">cells, regions, failure domains</span>
         </div>
       </li>
       <li>
         <span class="p-num mono">03</span>
         <div class="p-text">
-          <strong class="p-title">Composable</strong>
-          <span class="p-sub">focused responsibilities</span>
+          <strong class="p-title">Reconciliation explains itself</strong>
+          <span class="p-sub">evidence, not "failed"</span>
         </div>
       </li>
       <li>
         <span class="p-num mono">04</span>
         <div class="p-text">
-          <strong class="p-title">K8s-native</strong>
-          <span class="p-sub">GitOps-compatible</span>
+          <strong class="p-title">Read-only over blindness</strong>
+          <span class="p-sub">degrade, do not disappear</span>
         </div>
       </li>
     </ul>
