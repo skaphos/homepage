@@ -1,22 +1,22 @@
 ---
 title: "Tack"
-draft: true
 weight: 50
 portfolio: "Skaphos Platform"
 tagline: "Declarative progressive traffic shifting"
 status: "Proposed"
 statusClass: "status-proposed"
-summary: "Tack manages blue/green and canary traffic shifting through a Kubernetes-native provider-agnostic interface."
+summary: "Tack expresses progressive traffic shifts — canary and blue/green — as declarative intent, independent of the engine directing the traffic."
 module: "github.com/skaphos/tack"
 ---
 
-Tack manages declarative progressive traffic shifting across multiple load balancer provider types.
+Tack expresses progressive traffic shifting — canary steps and blue/green cutover — as declarative intent.
 
-It provides a Kubernetes-native surface for blue/green and canary traffic management while remaining decoupled from any specific deployment or upgrade system.
+Many different engines can direct traffic to clusters: cloud load balancers, service meshes, API gateways, ingress controllers, DNS, and CDNs. Tack's premise is that the shift itself — source, destination, progression, rollback — deserves a first-class declarative surface that does not depend on whichever engine happens to be moving the packets.
 
-## Planned characteristics
+How that intent binds to concrete traffic engines is deliberately unsettled; the integration model is being rethought before implementation begins.
 
-- Provider-agnostic adapter model.
-- Declarative `TrafficShift` resources.
-- Manual or automated progression and rollback.
-- Clean integration point for Meridian rollouts without depending on Meridian.
+## Scope
+
+- Declarative expression of a traffic shift: source, destination, progression steps, rollback.
+- Manual or automated progression.
+- Decoupled from any specific deployment or upgrade system; a clean integration point for Meridian rollouts without depending on Meridian.

@@ -6,6 +6,7 @@ tagline: "GitOps delivery control plane for Kubernetes platforms"
 status: "Active"
 statusClass: "status-active"
 summary: "Keleustes is an open-source GitOps delivery control plane that unifies application sync, promotion, topology, policy, and audit into a single Kubernetes-native system."
+repo: "https://github.com/skaphos/keleustes"
 module: "github.com/skaphos/keleustes"
 ---
 
