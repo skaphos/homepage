@@ -6,7 +6,6 @@ tagline: "Deterministic fleet lifecycle control for Kubernetes"
 status: "Planning"
 statusClass: "status-planned"
 summary: "Meridian is a Kubernetes-native fleet lifecycle controller for provisioning, identity management, upgrades, and decommissioning."
-repo: "https://github.com/skaphos/meridian"
 module: "github.com/skaphos/meridian"
 ---
 

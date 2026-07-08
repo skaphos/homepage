@@ -16,4 +16,4 @@ Skaphos is an open suite of platform-control tools for teams that need to encode
 
 ## Where it is going
 
-Skaphos is adoptable in layers: visibility first, then structure, then control. The work is organized into two portfolios — Skaphos Platform for the core control-plane systems, and Adjacent Tools for complementary utilities such as Repokeeper and Wake. The [manifesto]({{< relref "manifesto" >}}) is the long form of why this work exists.
+Skaphos is adoptable in layers: visibility first, then structure, then control. The work is organized into two portfolios — Skaphos Platform for the core control-plane systems, and Adjacent Tools for complementary utilities such as Repokeeper, Wake, and Sting. The [manifesto]({{< relref "manifesto" >}}) is the long form of why this work exists.

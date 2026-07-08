@@ -3,14 +3,14 @@ title: "Wake"
 weight: 70
 portfolio: "Adjacent Tools"
 tagline: "Evidence-backed repository forensics and ownership analysis"
-status: "Active"
-statusClass: "status-active"
+status: "Released"
+statusClass: "status-released"
 summary: "Wake analyzes Git history and repository evidence to produce inspectable conclusions about ownership, evolution, and contributor behavior."
 repo: "https://github.com/skaphos/wake"
 module: "github.com/skaphos/wake"
 ---
 
-Wake is a repository forensics and contributor behavior analysis system under active development.
+Wake is a repository forensics and contributor behavior analysis system. It is released and under active development.
 
 It reads Git history and related repository evidence, extracts normalized events, and produces evidence-backed summaries of repository evolution, ownership concentration, role patterns, and documentation alignment.
 

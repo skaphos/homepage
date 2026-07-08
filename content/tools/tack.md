@@ -1,6 +1,5 @@
 ---
 title: "Tack"
-draft: true
 weight: 50
 portfolio: "Skaphos Platform"
 tagline: "Declarative progressive traffic shifting"

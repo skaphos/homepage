@@ -1,6 +1,5 @@
 ---
 title: "Anchor"
-draft: true
 weight: 40
 portfolio: "Skaphos Platform"
 tagline: "Admission-time enforcement for immutable artifact references"

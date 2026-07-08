@@ -14,7 +14,7 @@ Berth is a distributed lease coordination service for Kubernetes multi-cluster w
 
 It provides TTL-based leases for cross-cluster mutual exclusion without introducing an external database or separate consensus layer. Leases are expressed as Kubernetes resources and managed through an API server, an operator, and a CLI.
 
-Berth has an initial release and remains under active development.
+Berth is released and under active development.
 
 ## Core components
 

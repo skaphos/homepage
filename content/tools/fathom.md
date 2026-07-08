@@ -14,7 +14,7 @@ Fathom validates Kubernetes cluster integrity against defined platform health re
 
 It is focused on structural platform soundness rather than metric-based monitoring and can be deployed to a Kubernetes cluster as a standalone system.
 
-Fathom has an initial release and remains under active development.
+Fathom is released and under active development.
 
 ## Conceptual components
 
