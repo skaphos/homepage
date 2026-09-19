@@ -3,9 +3,10 @@ title: "Oiax"
 weight: 75
 portfolio: "Adjacent Tools"
 tagline: "Declarative Git branch promotion reconciliation"
-status: "Proposed"
-statusClass: "status-proposed"
+status: "Released"
+statusClass: "status-released"
 summary: "Oiax keeps promotion pull requests reconciled across branch-per-environment GitOps repositories, and returns downstream hotfixes to the source branch."
+repo: "https://github.com/skaphos/oiax"
 module: "github.com/skaphos/oiax"
 ---
 
@@ -15,12 +16,15 @@ Given a declared promotion graph, it observes branch and forge state and ensures
 
 The name is the Greek οἴαξ — the tiller, the handle fitted to the rudder head. Oiax removes Git workflow toil; a hand stays on the tiller. Approval, validation, and policy gates remain wherever the repository already puts them.
 
-## Planned characteristics
+Oiax is released and under active development. It runs as the `skaphos/oiax@v2` GitHub Action or from an Azure Pipelines template; the floating `@v2` tag tracks the latest `v2.x.y`.
+
+## Characteristics
 
 - Promotion graph declared as data in a repository-local file.
 - Content-based divergence detection that survives squash and rebase merges.
 - Backflow: hotfixes landed on downstream branches are returned to the authoritative source branch via cherry-picked, deterministically named branches.
-- Runs in CI — GitHub Actions first — with no persistent control plane.
+- Runs in CI — GitHub Actions and Azure Pipelines — with no persistent control plane.
+- Optional Teams, Slack, and webhook notifications.
 - Idempotent and safe under concurrent, repeated, or missed invocations.
 
 ## Design boundary

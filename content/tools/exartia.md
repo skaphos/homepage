@@ -3,8 +3,8 @@ title: "Exartia"
 weight: 38
 portfolio: "Skaphos Platform"
 tagline: "Deterministic platform manifest bundles for cluster classes"
-status: "Proposed"
-statusClass: "status-proposed"
+status: "Active"
+statusClass: "status-active"
 summary: "Exartia compiles versioned platform manifests into immutable OCI bundles with typed values contracts and ordered apply plans."
 module: "github.com/skaphos/exartia"
 ---
@@ -14,6 +14,8 @@ Exartia is a deterministic platform manifest bundle compiler for Kubernetes.
 It packages the platform components a cluster class carries — CNI, cert-manager, ingress, mesh, policy — as immutable, digest-pinned OCI bundles, validates typed cluster input against a declared schema, renders deterministically, and emits ordered apply plans for GitOps systems to reconcile.
 
 The name is the Greek ἐξάρτια — a ship's fittings and rigging. A bundle is the fit-out of a cluster class: the versioned equipment set the hull carries.
+
+Exartia is at MVP 0: the bundle format, the deterministic renderer, and the `lint`, `render`, and `test` commands are implemented and gated by CI. Distribution, apply, and translation are not yet implemented.
 
 ## The package model
 

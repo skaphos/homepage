@@ -12,12 +12,13 @@ module: "github.com/skaphos/sting"
 
 Sting turns provider commit history into something an agent or a human can actually consume: ask for an author's commits over a window, get a structured Markdown or JSON report.
 
-It is a single binary. Run it directly for terminal reports, or run `sting mcp` to expose the same capability to agent runtimes as an MCP server with a single, read-only `get_commits` tool.
+It is a single binary. Run it directly for terminal reports, or run `sting mcp` to expose the same capability to agent runtimes as an MCP server over stdio.
 
 ## Core components
 
 - Query CLI producing Markdown or JSON commit reports by author and time window.
-- MCP server over stdio exposing read-only `get_commits`.
+- Repository activity digests (`sting activity`) summarizing a repository over a window without naming an author.
+- MCP server exposing four read-only tools: `get_commits`, `get_repo_activity`, `get_prs`, and `get_pr_inbox`.
 - OAuth authentication flows for GitHub and GitLab (`sting init`, `sting auth`).
 - Agent-runtime registration (`sting install`) for Claude Code, Codex, OpenCode, and Grok.
 
@@ -25,4 +26,4 @@ It is a single binary. Run it directly for terminal reports, or run `sting mcp` 
 
 - Read-only against providers; Sting never mutates repository state.
 - Dedicated read-only tokens live in Sting's own configuration rather than relying on ambient provider credentials.
-- Installable via the `skaphos/tools` Homebrew tap or `go install`.
+- Installable via the `skaphos/tools` Homebrew tap, `.deb` and `.rpm` packages attached to each release, or `go install`.
