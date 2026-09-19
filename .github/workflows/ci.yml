@@ -27,13 +27,12 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: Build with Hugo
+      - name: Build with Hugo (strict)
         env:
           HUGO_ENVIRONMENT: production
-        run: hugo --minify --gc
-
-      - name: Fail on broken internal reference or missing layout
         run: |
+          set -euo pipefail
+          rm -rf public
           # hugo exits 0 on some soft failures; treat WARN/ERROR output as fatal
           # so a bad ref or missing layout cannot reach main.
           hugo --minify --gc --logLevel warn 2>&1 | tee build.log
