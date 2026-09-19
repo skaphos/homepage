@@ -1,5 +1,5 @@
 baseURL = 'https://skaphos.io/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'Skaphos'
 disableKinds = ['taxonomy', 'term', 'RSS']
 

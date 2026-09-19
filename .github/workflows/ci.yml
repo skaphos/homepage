@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+        run: hugo --minify --gc
+
+      - name: Fail on broken internal reference or missing layout
+        run: |
+          # hugo exits 0 on some soft failures; treat WARN/ERROR output as fatal
+          # so a bad ref or missing layout cannot reach main.
+          hugo --minify --gc --logLevel warn 2>&1 | tee build.log
+          if grep -qiE '^(WARN|ERROR)' build.log; then
+            echo "::error::Hugo emitted warnings or errors; see log above."
+            exit 1
+          fi
+
+      - name: Verify expected pages rendered
+        run: |
+          set -euo pipefail
+          for page in index.html tools/index.html manifesto/index.html; do
+            if [ ! -s "public/${page}" ]; then
+              echo "::error::Expected page not rendered: public/${page}"
+              exit 1
+            fi
+          done
+          echo "Rendered $(find public -name '*.html' | wc -l) HTML pages."
