@@ -13,6 +13,13 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  # Keep in lockstep with hugo-pages.yml: this gate only means something if it
+  # builds with the same Hugo that publishes the site. A moving 'latest' is
+  # also what introduced the languageCode deprecation warning, which under the
+  # strict check below would fail the build with no change to the repo.
+  HUGO_VERSION: 0.165.0
+
 jobs:
   build:
     name: Build
@@ -24,7 +31,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
       - name: Build with Hugo (strict)
